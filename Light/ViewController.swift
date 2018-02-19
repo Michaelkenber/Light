@@ -9,7 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var lightOn = true
+    // Sets light on for first screen.
+    
+    @IBAction func buttonPressed(_ sender: Any) {
+        lightOn = !lightOn
+        // If buttons are pressed update light.
+        updateUI()
+    }
+    
+    func updateUI() {
+        // Change background lights to on if of ande vise versa.
+        if lightOn {
+            view.backgroundColor = .white
+        } else {
+            view.backgroundColor = .black
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
